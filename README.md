@@ -1,8 +1,8 @@
 # MyMovieManager
 
 
-![Scheme](/screenshots/SimulatorScreenShot-iPhone8Plus-2017-11-25at12.59.08x.png)
-![Scheme](/screenshots/SimulatorScreenShot-iPhone8Plus-2017-11-25at13.03.33x.png)
+![Scheme](/screenshots/SimulatorScreenShot-iPhone8Plus-2017-11-25at16.22.33.png)
+![Scheme](/screenshots/SimulatorScreenShot-iPhone8Plus-2017-11-25at16.22.46.png)
 
 
 MyMovieManager is an iOS sample application that manages favorite movies using TheMovieDB API.
