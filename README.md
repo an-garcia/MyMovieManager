@@ -5,7 +5,7 @@
 ![Scheme](/screenshots/SimulatorScreenShot-iPhone8Plus-2017-11-25at16.22.46.png)
 
 
-MyMovieManager is an iOS sample application that manages favorite movies using TheMovieDB API.
+MyFavoriteMovies is an iOS sample application that manages favorite movies using TheMovieDB API.
 The purpose of the project is to learn mobile development for iOS using swift.
 The application is based on [iOS Networking with Swift](https://www.udacity.com/course/ios-networking-with-swift--ud421) course.
 
@@ -22,7 +22,15 @@ To visualize JSON:
 The MovieDB API documentation:
 - [The Movie Database API](https://www.themoviedb.org/documentation/api)
 - [starting](https://developers.themoviedb.org/3/getting-started)
+- [create-request-token](https://developers.themoviedb.org/3/authentication/create-request-token)
+- [create-session](https://developers.themoviedb.org/3/authentication/create-session)
+- [get-account-details](https://developers.themoviedb.org/3/account/get-account-details)
+- [status-codes](https://www.themoviedb.org/documentation/api/status-codes)
+- [mark-as-favorite](https://developers.themoviedb.org/3/account/mark-as-favorite)
 
+Knowledge notes:
+- [Get request vs Post request](https://www.w3schools.com/tags/ref_httpmethods.asp)
+- [List_of_HTTP_status_codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
 
 ## License

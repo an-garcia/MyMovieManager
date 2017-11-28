@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		82B56C891FCA03AC00C84419 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B56C881FCA03AC00C84419 /* AppDelegate.swift */; };
-		82B56C8B1FCA03AC00C84419 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B56C8A1FCA03AC00C84419 /* ViewController.swift */; };
 		82B56C8E1FCA03AC00C84419 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B56C8C1FCA03AC00C84419 /* Main.storyboard */; };
 		82B56C901FCA03AC00C84419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82B56C8F1FCA03AC00C84419 /* Assets.xcassets */; };
 		82B56C931FCA03AC00C84419 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B56C911FCA03AC00C84419 /* LaunchScreen.storyboard */; };
@@ -30,7 +29,6 @@
 /* Begin PBXFileReference section */
 		82B56C851FCA03AC00C84419 /* MyMovieManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B56C881FCA03AC00C84419 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		82B56C8A1FCA03AC00C84419 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		82B56C8D1FCA03AC00C84419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82B56C8F1FCA03AC00C84419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82B56C921FCA03AC00C84419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 			children = (
 				82B56C881FCA03AC00C84419 /* AppDelegate.swift */,
 				82B56C9A1FCA071700C84419 /* GCDBlackBox.swift */,
-				82B56C8A1FCA03AC00C84419 /* ViewController.swift */,
 				82B56CAE1FCA083200C84419 /* Controller */,
 				82B56CAB1FCA080700C84419 /* View */,
 				82B56C9C1FCA076900C84419 /* Model */,
@@ -223,7 +220,6 @@
 				82B56CB61FCA084300C84419 /* MovieDetailViewController.swift in Sources */,
 				82B56CB81FCA084300C84419 /* WatchlistViewController.swift in Sources */,
 				82B56CA51FCA07B300C84419 /* TMDBConfig.swift in Sources */,
-				82B56C8B1FCA03AC00C84419 /* ViewController.swift in Sources */,
 				82B56CA91FCA07B300C84419 /* TMDBConvenience.swift in Sources */,
 				82B56CA71FCA07B300C84419 /* TMDBAuthViewController.swift in Sources */,
 				82B56C9B1FCA071700C84419 /* GCDBlackBox.swift in Sources */,
