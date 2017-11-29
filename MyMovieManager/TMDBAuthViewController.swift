@@ -53,12 +53,21 @@ class TMDBAuthViewController: UIViewController {
 extension TMDBAuthViewController: UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        // If the user click allow to OAuth then, dismiss the view
         //print ("=====")
         //print (webView.request!.url!.absoluteString )
         //print ("=====")
+        
+        // if user has to login, this will redirect them back to the authorization url
+        if webView.request!.url!.absoluteString.contains(TMDBClient.Constants.AccountURL) {
+            if let urlRequest = urlRequest {
+                webView.loadRequest(urlRequest)
+            }
+        }
+        
+        // If the user click allow to OAuth then, dismiss the view
         if webView.request!.url!.absoluteString == "\(TMDBClient.Constants.AuthorizationURL)\(requestToken!)/allow" {
-            dismiss(animated: true){
+            
+            dismiss(animated: true) {
                 self.completionHandlerForView!(true, nil)
             }
         }

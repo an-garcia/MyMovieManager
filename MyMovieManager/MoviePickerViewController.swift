@@ -73,7 +73,7 @@ extension MoviePickerViewController: UIGestureRecognizerDelegate {
 // MARK: - MoviePickerViewController: UISearchBarDelegate
 
 extension MoviePickerViewController: UISearchBarDelegate {
-
+    
     // each time the search text changes we want to cancel any current download and start a new one
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -87,6 +87,17 @@ extension MoviePickerViewController: UISearchBarDelegate {
             movies = [TMDBMovie]()
             movieTableView?.reloadData()
             return
+        }
+        
+        // new search
+        searchTask = TMDBClient.sharedInstance().getMoviesForSearchString(searchText) { (movies, error) in
+            self.searchTask = nil
+            if let movies = movies {
+                self.movies = movies
+                performUIUpdatesOnMain {
+                    self.movieTableView!.reloadData()
+                }
+            }
         }
     }
     
@@ -118,10 +129,11 @@ extension MoviePickerViewController: UITableViewDelegate, UITableViewDataSource 
         return movies.count
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let movie = movies[(indexPath as NSIndexPath).row]
         let controller = storyboard!.instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
         controller.movie = movie
         navigationController!.pushViewController(controller, animated: true)
     }
 }
+

@@ -31,6 +31,17 @@ class WatchlistViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        TMDBClient.sharedInstance().getWatchlistMovies { (movies, error) in
+            if let movies = movies {
+                self.movies = movies
+                performUIUpdatesOnMain {
+                    self.moviesTableView.reloadData()
+                }
+            } else {
+                print(error ?? "empty error")
+            }
+        }
     }
     
     // MARK: Logout
@@ -55,20 +66,32 @@ extension WatchlistViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.textLabel!.text = movie.title
         cell?.imageView!.image = UIImage(named: "Film")
         cell?.imageView!.contentMode = UIViewContentMode.scaleAspectFit
-                
-        return cell!        
+        
+        if let posterPath = movie.posterPath {
+            let _ = TMDBClient.sharedInstance().taskForGETImage(TMDBClient.PosterSizes.RowPoster, filePath: posterPath, completionHandlerForImage: { (imageData, error) in
+                if let image = UIImage(data: imageData!) {
+                    performUIUpdatesOnMain {
+                        cell?.imageView!.image = image
+                    }
+                } else {
+                    print(error ?? "empty error")
+                }
+            })
+        }
+        
+        return cell!
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = storyboard!.instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
         controller.movie = movies[(indexPath as NSIndexPath).row]
         navigationController!.pushViewController(controller, animated: true)
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
